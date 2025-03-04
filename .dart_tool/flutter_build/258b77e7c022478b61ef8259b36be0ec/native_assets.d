@@ -1,0 +1,1 @@
+ D:\\medicalshala\\.dart_tool\\flutter_build\\258b77e7c022478b61ef8259b36be0ec\\native_assets.yaml: 
