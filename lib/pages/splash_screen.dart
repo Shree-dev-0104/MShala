@@ -28,13 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.transparent, // Customize background color
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-              const Color.fromARGB(255, 20, 123, 208),
-              const Color.fromARGB(255, 110, 153, 188),
+              Color.fromARGB(255, 20, 123, 208),
+              Color.fromARGB(255, 110, 153, 188),
             ])),
         child: const Center(
           child: Padding(

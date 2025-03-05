@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medicalshala/components/detail_row.dart';
+import 'package:medicalshala/pages/payment_screen.dart';
+
+
+/*
+NAVIGATION - PAYMENT PROCESS SCREEN - PAYMENT SCREEN
+*/
 
 class PaymentProcessScreen extends StatelessWidget {
   final String patientName;
@@ -168,7 +174,11 @@ class PaymentProcessScreen extends StatelessWidget {
                 height: 45,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle payment process
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PaymentScreen(),
+                        ));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,

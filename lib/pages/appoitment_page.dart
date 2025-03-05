@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:medicalshala/components/appointment_actions.dart';
 import 'package:medicalshala/components/appointment_card.dart';
 
+/*
+NAVIGATION - APPOINTMNET PAGE TO Schedule Appointment Page
+*/
+
 // Main Appointment Page
 class AppointmentPage extends StatelessWidget {
   const AppointmentPage({super.key});

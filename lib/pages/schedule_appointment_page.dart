@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medicalshala/pages/payment_process_screen.dart';
 
+/*
+NAVIGATION - SCHEDULE APPOINTMENT PAGE TO PAYMENT PROCESS SCREEN
+*/
+
 class ScheduleAppointmentPage extends StatefulWidget {
   const ScheduleAppointmentPage({super.key});
 
@@ -60,7 +64,7 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
       appBar: AppBar(
         title: const Text(
           "Schedule Appointment",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         centerTitle: true,
         elevation: 0,
@@ -77,20 +81,29 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
 
               // Patient Details Section
               const Text("Patient Details",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
 
               TextField(
                 controller: _nameController,
                 decoration: InputDecoration(
-                  labelText: "Patient's Name",
-                  filled: true,
-                  fillColor: const Color(0xFFE5F4FF),
+                  fillColor:
+                      const Color(0xFFE5F4FF), // Set the background color
+                  filled: true, // Enable filling the background color
+                  hintText: "Patient's Name",
+                  hintStyle: const TextStyle(fontSize: 12),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade100, width: 1),
+                  ),
+                  isDense: true,
                 ),
+                style: const TextStyle(fontSize: 14),
                 onChanged: (value) {
-                  setState(() {}); // Update state to enable/disable button
+                  setState(() {});
                 },
               ),
               const SizedBox(height: 10),
@@ -101,16 +114,24 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                     child: TextField(
                       controller: _ageController,
                       decoration: InputDecoration(
-                        labelText: "Age",
-                        filled: true,
-                        fillColor: const Color(0xFFE5F4FF),
+                        fillColor:
+                            const Color(0xFFE5F4FF), // Set the background color
+                        filled: true, // Enable filling the background color
+                        hintText: "Age",
+                        hintStyle: const TextStyle(fontSize: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide:
+                              BorderSide(color: Colors.blue.shade100, width: 1),
+                        ),
+                        isDense: true,
                       ),
+                      style: const TextStyle(fontSize: 14),
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
-                        setState(
-                            () {}); // Update state to enable/disable button
+                        setState(() {});
                       },
                     ),
                   ),
@@ -126,7 +147,7 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                           });
                         },
                       ),
-                      const Text("Male"),
+                      const Text("Male", style: TextStyle(fontSize: 12)),
                       Radio(
                         value: "Female",
                         groupValue: _selectedGender,
@@ -136,7 +157,7 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                           });
                         },
                       ),
-                      const Text("Female"),
+                      const Text("Female", style: TextStyle(fontSize: 12)),
                     ],
                   ),
                 ],
@@ -147,28 +168,39 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                 controller: _reasonController,
                 maxLines: 2,
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0xFFE5F4FF),
-                  labelText: "Reason for appointment",
+                  fillColor:
+                      const Color(0xFFE5F4FF), // Set the background color
+                  filled: true, // Enable filling the background color
+                  hintText: "Reason for appointment",
+                  hintStyle: const TextStyle(fontSize: 12),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade100, width: 1),
+                  ),
+                  isDense: true,
                 ),
+                style: const TextStyle(fontSize: 14),
                 onChanged: (value) {
-                  setState(() {}); // Update state to enable/disable button
+                  setState(() {});
                 },
               ),
               const SizedBox(height: 20),
 
               // Doctor Details Section
               const Text("Doctor Details",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
 
               DropdownButtonFormField(
+                dropdownColor: Color(0xFFE5F4FF),
                 value: _selectedDoctor,
-                dropdownColor: const Color(0xFFE5F4FF),
                 items: const [
-                  DropdownMenuItem(value: "Dr. Smith", child: Text("Dr. Smith"))
+                  DropdownMenuItem(
+                      value: "Dr. Smith", child: Text("Dr. Smith")),
+                  DropdownMenuItem(value: "Dr. Alex", child: Text("Dr. Alex")),
                 ],
                 onChanged: (value) {
                   setState(() {
@@ -176,20 +208,30 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                   });
                 },
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0xFFE5F4FF),
-                  labelText: "Doctor's Name",
+                  fillColor:
+                      const Color(0xFFE5F4FF), // Set the background color
+                  filled: true, // Enable filling the background color
+                  hintText: "Doctor's Name",
+                  hintStyle: const TextStyle(fontSize: 12),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(color: Color(0xFFE5F4FF), width: 1),
+                  ),
+                  isDense: true,
                 ),
+                style: const TextStyle(fontSize: 14, color: Colors.black),
               ),
               const SizedBox(height: 10),
 
               DropdownButtonFormField(
                 value: _selectedHospital,
+                dropdownColor: Color(0xFFE5F4FF),
                 items: const [
                   DropdownMenuItem(
-                      value: "City Hospital", child: Text("City Hospital"))
+                      value: "City Hospital", child: Text("City Hospital")),
+                  DropdownMenuItem(value: "AIIMS", child: Text("AIIMS"))
                 ],
                 onChanged: (value) {
                   setState(() {
@@ -197,12 +239,20 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                   });
                 },
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0xFFE5F4FF),
-                  labelText: "Hospital's Name",
+                  fillColor:
+                      const Color(0xFFE5F4FF), // Set the background color
+                  filled: true, // Enable filling the background color
+                  hintText: "Hospital's Name",
+                  hintStyle: const TextStyle(fontSize: 12),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(color: Color(0xFFE5F4FF), width: 1),
+                  ),
+                  isDense: true,
                 ),
+                style: const TextStyle(fontSize: 14, color: Colors.black),
               ),
               const SizedBox(height: 10),
 
@@ -212,19 +262,27 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                     child: TextField(
                       controller: _dateController,
                       decoration: InputDecoration(
-                        filled: true,
-                        fillColor: const Color(0xFFE5F4FF),
-                        labelText: "dd/mm/yyyy",
+                        fillColor:
+                            const Color(0xFFE5F4FF), // Set the background color
+                        filled: true, // Enable filling the background color
+                        hintText: "dd/mm/yyyy",
+                        hintStyle: const TextStyle(fontSize: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide:
+                              BorderSide(color: Color(0xFFE5F4FF), width: 1),
+                        ),
+                        isDense: true,
                       ),
+                      style: const TextStyle(fontSize: 14),
                       keyboardType: TextInputType.datetime,
                       onTap: () {
-                        _selectDate(context); // Open date picker
+                        _selectDate(context);
                       },
                       onChanged: (value) {
-                        setState(
-                            () {}); // Update state to enable/disable button
+                        setState(() {});
                       },
                     ),
                   ),
@@ -234,20 +292,32 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                       value: _selectedTimeSlot,
                       items: const [
                         DropdownMenuItem(
-                            value: "10:00 AM", child: Text("10:00 AM"))
+                            value: "10:00 AM", child: Text("10:00 AM")),
+                        DropdownMenuItem(
+                            value: "12:00 AM", child: Text("12:00 AM"))
                       ],
                       onChanged: (value) {
                         setState(() {
                           _selectedTimeSlot = value as String?;
                         });
                       },
+                      dropdownColor: Color(0xFFE5F4FF),
                       decoration: InputDecoration(
-                        filled: true,
-                        fillColor: const Color(0xFFE5F4FF),
-                        labelText: "Select Slot",
+                        fillColor:
+                            const Color(0xFFE5F4FF), // Set the background color
+                        filled: true, // Enable filling the background color
+                        hintText: "Select Slot",
+                        hintStyle: const TextStyle(fontSize: 12),
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide:
+                              BorderSide(color: Color(0xFFE5F4FF), width: 1),
+                        ),
+                        isDense: true,
                       ),
+                      style: const TextStyle(fontSize: 14, color: Colors.black),
                     ),
                   ),
                 ],
@@ -256,48 +326,60 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
 
               // Contact Number Section
               const Text("Contact Number",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
 
               TextField(
                 controller: _contactController,
                 decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0xFFE5F4FF),
-                  prefixIcon: const Icon(Icons.phone),
-                  labelText: "+91 ",
+                  fillColor:
+                      const Color(0xFFE5F4FF), // Set the background color
+                  filled: true, // Enable filling the background color
+                  prefixIcon: const Icon(Icons.phone, size: 18),
+                  hintText: "+91 ",
+                  hintStyle: const TextStyle(fontSize: 12),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(color: Color(0xFFE5F4FF), width: 1),
+                  ),
+                  isDense: true,
                 ),
+                style: const TextStyle(fontSize: 14),
                 keyboardType: TextInputType.phone,
                 onChanged: (value) {
-                  setState(() {}); // Update state to enable/disable button
+                  setState(() {});
                 },
               ),
               const SizedBox(height: 20),
 
               // Support Section
               Container(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.info_outline, color: Colors.blue),
+                    const Icon(Icons.info_outline,
+                        color: Colors.blue, size: 20),
                     const SizedBox(width: 10),
                     const Expanded(
                       child: Text(
                         "Our support team is here to help with appointment scheduling. Reach out anytime for quick assistance!",
+                        style: TextStyle(fontSize: 12),
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.call, color: Colors.blue),
+                      icon:
+                          const Icon(Icons.call, color: Colors.blue, size: 20),
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: const Icon(Icons.chat, color: Colors.blue),
+                      icon:
+                          const Icon(Icons.chat, color: Colors.blue, size: 20),
                       onPressed: () {},
                     ),
                   ],
@@ -306,8 +388,8 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
               const SizedBox(height: 20),
 
               // Schedule Appointment Button
-              ElevatedButton(
-                onPressed: _areAllFieldsFilled()
+              GestureDetector(
+                onTap: _areAllFieldsFilled()
                     ? () {
                         Navigator.push(
                           context,
@@ -323,21 +405,37 @@ class _ScheduleAppointmentPageState extends State<ScheduleAppointmentPage> {
                               appointmentDate: _dateController.text,
                               appointmentSlot:
                                   _selectedTimeSlot ?? "Not specified",
-                              consultationFee:
-                                  500, // Default value or you could make this dynamic
+                              consultationFee: 500,
                             ),
                           ),
                         );
                       }
                     : null,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: _areAllFieldsFilled()
-                      ? Colors.blue
-                      : Colors.grey[300], // Change color based on validation
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size(double.infinity, 50),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    width: 200, // More compact width
+                    height: 40, // More compact height
+                    decoration: BoxDecoration(
+                      color: _areAllFieldsFilled()
+                          ? Colors.blue
+                          : Colors.grey[300],
+                      borderRadius:
+                          BorderRadius.circular(12), // Rounded corners
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Schedule Appointment",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: _areAllFieldsFilled()
+                            ? Colors.white
+                            : Colors.black54,
+                      ),
+                    ),
+                  ),
                 ),
-                child: const Text("Schedule Appointment"),
               ),
               const SizedBox(height: 20),
             ],

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medicalshala/components/my_text_field.dart';
 import 'package:medicalshala/pages/appoitment_page.dart';
+/*
+NAVIGATION - LOGIN SCREEN TO APPOINTMNET PAGE
+*/
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -45,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.w700,
-                        fontSize: 20),
+                        fontSize: 18),
                   ),
 
                   const Text(
